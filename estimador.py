@@ -54,12 +54,12 @@ class modelo():
 novos_dados = pd.read_csv('prev_249.csv')
 
 # Criar uma instância do modelo
-LogisticRegression= modelo('content_249.csv')
+LogReg = modelo('content_249.csv')
 
 # Treinar o modelo
-LogisticRegression.treino()
+LogReg.treino()
 
 # Fazer previsões nos novos dados
-LogisticRegression.previsao_novos_dados(novos_dados)
+LogReg.previsao_novos_dados(novos_dados)
 
 novos_dados.head()
