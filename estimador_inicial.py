@@ -26,7 +26,7 @@ class modelo():
 
     def treino(self):
         # Rodar modelo
-        text_clf = Pipeline([('vect', CountVectorizer(ngram_range=(1,3), min_df=1, stop_words="english")),
+        text_clf = Pipeline([('vect', CountVectorizer(ngram_range=(1,3), min_df=1, stop_words="portuguese")),
         ('tfidf', TfidfTransformer()),
         ('clf', LogisticRegression(C=5))])
         text_clf.fit(self.df.texto, self.df.relevant)
