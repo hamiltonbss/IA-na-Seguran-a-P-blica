@@ -1,16 +1,4 @@
 
-lista = ['site:*.leg.br', 'site:*.jus.br', 'site:*.mp.br', 'site:*.gov.br', 
-         'site:*.gov.br/pf', 'site:*.gov.br/prf', 'site:*.gov.br/mj', 'site:*.gov.br/mcti',
-         "site:*.ac.gov.br", "site:*.al.gov.br", "site:*.ap.gov.br", 
-         "site:*.am.gov.br", "site:*.ba.gov.br", "site:*.ce.gov.br", "site:*.df.gov.br", "site:*.es.gov.br", "site:*.go.gov.br",
-         "site:*.ma.gov.br", "site:*.mt.gov.br", "site:*.ms.gov.br", "site:*.mg.gov.br", "site:*.pa.gov.br", "site:*.pb.gov.br", "site:*.pr.gov.br",
-         "site:*.pe.gov.br", "site:*.pi.gov.br", "site:*.rj.gov.br", "site:*.rn.gov.br", "site:*.rs.gov.br", "site:*.ro.gov.br", "site:*.rr.gov.br", 
-         "site:*.sc.gov.br", "site:*.sp.gov.br", "site:*.se.gov.br", "site:*.to.gov.br"]
-
-
-for i in lista:
-    Busca_api('dados/termos.csv', i, paginas=10).buscador()
-
 #pip install google-api-python-client
 #pip install colorama
 
@@ -145,3 +133,12 @@ class Busca_api():
            
             df.to_csv(f"dados/{nome.replace('/', '_')}_{timestamp}.csv", sep=';', header=None)
             df2.to_csv(f"dados/{nome.replace('/', '_')}_resultados_{timestamp}.csv", sep=';', header=None)
+
+
+#### Execução 
+
+lista = ['site:*.leg.br'] #lista com os domínios
+
+
+for i in lista:
+    Busca_api('dados/termos.csv', i, paginas=10).buscador()
